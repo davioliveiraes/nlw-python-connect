@@ -23,7 +23,7 @@ class SubscriberManager:
          formatted_subscriber.append(
             {
                "nome": sub.nome,
-               "email": subs.email,
+               "email": sub.email,
             }
          )
       return HttpResponse(
@@ -33,7 +33,8 @@ class SubscriberManager:
                "count": len(formatted_subscriber),
                "subscribers": formatted_subscriber
             }
-         }
+         },
+         status_code=200
       )
    
    def __format_event_ranking(self, event_ranking: list) -> HttpResponse:
@@ -41,8 +42,8 @@ class SubscriberManager:
       for position in event_ranking:
          formatted_event_ranking.append(
             {
-               "link": position.nome,
-               "total_subscribers": position.email,
+               "link": position.link,
+               "total_subscribers": position.total,
             }
          )
       return HttpResponse(
@@ -52,6 +53,7 @@ class SubscriberManager:
                "count": len(formatted_event_ranking),
                "ranking": formatted_event_ranking
             }
-         }
+         },
+         status_code=200
       )
 

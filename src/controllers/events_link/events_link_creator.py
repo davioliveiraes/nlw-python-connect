@@ -1,5 +1,5 @@
 from src.http_types.http_request import HttpRequest
-from src.http_types.http_request import HttpResponse
+from src.http_types.http_response import HttpResponse
 
 from src.model.repositories.interfaces.eventos_link_repository import EventosLinkRepositoryInterface
 
